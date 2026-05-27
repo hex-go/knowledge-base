@@ -1,0 +1,34 @@
+{{define "title"}}知识点{{end}}
+
+{{define "content"}}
+<h1>知识点</h1>
+<div class="category-tree">
+    {{range .Tree}}
+    {{template "tree-node" .}}
+    {{end}}
+</div>
+{{end}}
+
+{{define "tree-node"}}
+<div class="tree-node">
+    {{if .IsLeaf}}
+        {{if .File}}
+            <a href="/knowledge/{{.File.RelPath}}" class="item-link">
+                <span class="difficulty difficulty-{{.File.Meta.Difficulty}}">{{.File.Meta.Difficulty}}</span>
+                {{.File.Meta.Title}}
+                {{if eq .File.Meta.Status "mastered"}}<span class="mastered">已掌握</span>{{end}}
+            </a>
+        {{end}}
+    {{else}}
+        <div class="folder" data-expanded="true">
+            <span class="folder-toggle">▼</span>
+            <span class="folder-name">{{.Name}}</span>
+        </div>
+        <div class="folder-content">
+            {{range .Children}}
+            {{template "tree-node" .}}
+            {{end}}
+        </div>
+    {{end}}
+</div>
+{{end}}

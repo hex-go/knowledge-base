@@ -1,0 +1,21 @@
+{{define "title"}}概念问答{{end}}
+
+{{define "content"}}
+<h1>概念问答</h1>
+{{if .Files}}
+<ul class="item-list">
+    {{range .Files}}
+    <li>
+        <a href="/concepts/{{.RelPath}}" class="item-link">
+            <span class="difficulty difficulty-{{.Meta.Difficulty}}">{{.Meta.Difficulty}}</span>
+            {{.Meta.Title}}
+            {{if eq .Meta.Status "mastered"}}<span class="mastered">已掌握</span>{{end}}
+        </a>
+        <span class="meta">{{.Meta.Category}}</span>
+    </li>
+    {{end}}
+</ul>
+{{else}}
+<p class="empty">还没有概念问答题目，让 Claude Code 帮你出第一题。</p>
+{{end}}
+{{end}}

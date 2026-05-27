@@ -1,0 +1,53 @@
+{{define "title"}}{{.File.Meta.Title}} · 编码题{{end}}
+
+{{define "content"}}
+<div class="detail">
+    <div class="detail-header">
+        <a href="/exercises/" class="back-link">← 返回列表</a>
+        <h1>{{.File.Meta.Title}}</h1>
+        <div class="detail-meta">
+            <span class="difficulty difficulty-{{.File.Meta.Difficulty}}">{{.File.Meta.Difficulty}}</span>
+            <span>{{.File.Meta.Category}}</span>
+        </div>
+        {{if .File.Meta.Tags}}
+        <div class="tags">
+            {{range .File.Meta.Tags}}
+            <a href="/search?q={{.}}" class="tag">#{{.}}</a>
+            {{end}}
+        </div>
+        {{end}}
+    </div>
+
+    <div class="detail-body">
+        {{range .Sections}}
+        <div class="section">
+            <h2>{{.Heading}}</h2>
+            <div class="markdown-body">
+                {{.Content | markdown}}
+            </div>
+        </div>
+        {{end}}
+    </div>
+
+    {{if .Attempts}}
+    <div class="attempts-section">
+        <h2>答题记录</h2>
+        {{range $i, $a := .Attempts}}
+        <div class="attempt-block {{if $a.Passed}}attempt-pass{{else}}attempt-fail{{end}}">
+            <div class="attempt-header">
+                <span class="attempt-badge">{{if $a.Passed}}✓{{else}}✗{{end}}</span>
+                <span>尝试 {{$a.Index}} · {{$a.Date}}</span>
+                <form method="post" action="/exercises/{{$.File.RelPath}}/delete-attempt" class="inline-form" style="margin-left:auto">
+                    <input type="hidden" name="index" value="{{$i}}">
+                    <button type="submit" class="btn-sm btn-danger" onclick="return confirm('删除这条记录？')">删除</button>
+                </form>
+            </div>
+            <div class="attempt-body markdown-body">
+                {{$a.RawText | markdown}}
+            </div>
+        </div>
+        {{end}}
+    </div>
+    {{end}}
+</div>
+{{end}}

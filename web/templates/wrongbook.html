@@ -1,0 +1,24 @@
+{{define "title"}}错题本{{end}}
+
+{{define "content"}}
+<h1>错题本</h1>
+{{if .Files}}
+<ul class="item-list">
+    {{range .Files}}
+    <li>
+        <a href="/wrong-book/{{.RelPath}}" class="item-link">
+            <span class="badge badge-wrong">{{.Meta.WrongCount}}次</span>
+            <span class="badge {{if eq .Meta.Type "coding"}}badge-coding{{else}}badge-concept{{end}}">
+                {{if eq .Meta.Type "coding"}}编码{{else}}概念{{end}}
+            </span>
+            {{.Meta.Title}}
+            {{if eq .Meta.Status "mastered"}}<span class="mastered">已掌握</span>{{end}}
+        </a>
+        <span class="meta">最近: {{.Meta.LastWrongDate}}</span>
+    </li>
+    {{end}}
+</ul>
+{{else}}
+<p class="empty">还没有错题记录，继续保持。</p>
+{{end}}
+{{end}}

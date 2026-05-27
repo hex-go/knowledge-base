@@ -1,0 +1,33 @@
+{{define "title"}}{{.File.Meta.Title}} · 错题记录{{end}}
+
+{{define "content"}}
+<div class="detail">
+    <div class="detail-header">
+        <a href="/wrong-book/" class="back-link">← 返回错题本</a>
+        <h1>{{.File.Meta.Title}}</h1>
+        <div class="detail-meta">
+            <span class="badge badge-wrong">错误 {{.File.Meta.WrongCount}} 次</span>
+            <span>{{.File.Meta.Type}}</span>
+            <span>{{.File.Meta.Category}}</span>
+            <span>最近: {{.File.Meta.LastWrongDate}}</span>
+        </div>
+    </div>
+
+    <div class="detail-body">
+        {{range .Sections}}
+        <div class="section">
+            <h2>{{.Heading}}</h2>
+            <div class="markdown-body">
+                {{.Content | markdown}}
+            </div>
+        </div>
+        {{end}}
+    </div>
+
+    <div class="detail-footer">
+        <form method="post" action="/wrong-book/{{.File.RelPath}}/master" class="inline-form">
+            <button type="submit" class="btn-primary">标记已掌握</button>
+        </form>
+    </div>
+</div>
+{{end}}

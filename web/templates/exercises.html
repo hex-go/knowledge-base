@@ -1,0 +1,21 @@
+{{define "title"}}编码题{{end}}
+
+{{define "content"}}
+<h1>编码题</h1>
+{{if .Files}}
+<ul class="item-list">
+    {{range .Files}}
+    <li>
+        <a href="/exercises/{{.RelPath}}" class="item-link">
+            <span class="difficulty difficulty-{{.Meta.Difficulty}}">{{.Meta.Difficulty}}</span>
+            {{.Meta.Title}}
+            {{if eq .Meta.Status "mastered"}}<span class="mastered">已掌握</span>{{end}}
+        </a>
+        <span class="meta">{{.Meta.Category}}</span>
+    </li>
+    {{end}}
+</ul>
+{{else}}
+<p class="empty">还没有编码题，让 Claude Code 帮你出第一题。</p>
+{{end}}
+{{end}}

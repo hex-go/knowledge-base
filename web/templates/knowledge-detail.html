@@ -1,0 +1,72 @@
+{{define "title"}}{{.File.Meta.Title}} · 知识点{{end}}
+
+{{define "content"}}
+<div class="detail">
+    <div class="detail-header">
+        <a href="/knowledge/" class="back-link">← 返回知识点</a>
+        <h1>{{.File.Meta.Title}}</h1>
+        <div class="detail-meta">
+            <span class="difficulty difficulty-{{.File.Meta.Difficulty}}">{{.File.Meta.Difficulty}}</span>
+            <span>{{.File.Meta.Category}}</span>
+            <span>状态: {{.File.Meta.Status}}</span>
+            <span>上次复习: {{.File.Meta.LastReview}}</span>
+        </div>
+        {{if .File.Meta.Tags}}
+        <div class="tags">
+            {{range .File.Meta.Tags}}
+            <a href="/search?q={{.}}" class="tag">#{{.}}</a>
+            {{end}}
+        </div>
+        {{end}}
+    </div>
+
+    <div class="detail-body">
+        {{range .Sections}}
+            {{if eq .Heading "我的理解"}}
+                <div class="my-understanding">
+                    <div class="section-header">
+                        <h2>我的理解</h2>
+                        <button class="btn-edit" onclick="toggleEdit('my-understanding')">编辑</button>
+                    </div>
+                    <div class="section-content markdown-body" id="my-understanding-view">
+                        {{.Content | markdown}}
+                    </div>
+                    <div class="edit-area hidden" id="my-understanding-edit">
+                        <form method="post" action="/knowledge/{{$.File.RelPath}}/edit">
+                            <input type="hidden" name="section" value="我的理解">
+                            <textarea name="content" rows="12">{{.Content}}</textarea>
+                            <div class="edit-actions">
+                                <button type="submit" class="btn-save">保存</button>
+                                <button type="button" class="btn-cancel" onclick="toggleEdit('my-understanding')">取消</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            {{else}}
+                <div class="section">
+                    <h2>{{.Heading}}</h2>
+                    <div class="markdown-body">
+                        {{.Content | markdown}}
+                    </div>
+                </div>
+            {{end}}
+        {{end}}
+    </div>
+
+    <div class="detail-footer">
+        <form method="post" action="/knowledge/{{.File.RelPath}}/review" class="inline-form">
+            <button type="submit" class="btn-primary">标记已复习</button>
+        </form>
+        <form method="post" action="/knowledge/{{.File.RelPath}}/master" class="inline-form">
+            <button type="submit" class="btn-secondary">标记已掌握</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function toggleEdit(id) {
+    document.getElementById(id+'-view').classList.toggle('hidden');
+    document.getElementById(id+'-edit').classList.toggle('hidden');
+}
+</script>
+{{end}}
