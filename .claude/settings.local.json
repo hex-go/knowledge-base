@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(find-skills)",
+      "Bash(go build *)",
+      "Bash(go run *)",
+      "Bash(curl -s http://localhost:8080/)",
+      "Bash(pkill -f \"go run ./cmd/server\")",
+      "Bash(pkill -f \"hex-go-interview\")",
+      "Bash(pkill -f \"cmd/server\")",
+      "Bash(curl -s http://localhost:8080/knowledge/)",
+      "Bash(go clean *)",
+      "Bash(pkill -f \"test-server\")",
+      "Bash(/tmp/test-server.exe)",
+      "Bash(pkill -f \"go_test\")",
+      "Bash(pkill -f \"hex-go\")",
+      "Bash(timeout 3 ./test-server.exe)",
+      "Bash(curl -s http://localhost:8080/static/style.css)",
+      "Bash(curl -s 'http://localhost:8080/search?q=slice')",
+      "Bash(curl -s http://localhost:8080/concepts/)",
+      "Bash(curl -s http://localhost:8080/wrong-book/)",
+      "Bash(taskkill //F //IM test-server.exe)",
+      "Bash(./test-server.exe)",
+      "Bash(curl -s http://localhost:8080/knowledge/internals/slice-array/slice-expansion.md)"
+    ]
+  }
+}
