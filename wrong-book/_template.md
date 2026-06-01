@@ -1,15 +1,16 @@
 ---
-exercise_ref: exercises/concurrency/concurrent-counter
-type: coding
+exercise_ref: exercises/go/concurrency/concurrent-counter
+type: coding               # coding | concept
 wrong_count: 1
-last_wrong_date: 2026-05-27
+last_wrong_date: 2026-06-01
 status: reviewing
+domain: go
 ---
 # 题目名称 — 错题记录
 
 ## 错误记录
 
-### 第 1 次 · 2026-05-27
+### 第 1 次 · 2026-06-01
 **错误思维链：**
 我当时的思路是……（记录当时的思考过程，为什么这样想）
 

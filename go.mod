@@ -1,3 +1,3 @@
-module github.com/hex-go/hex-go-interview
+module github.com/hex-go/knowledge-base
 
 go 1.21

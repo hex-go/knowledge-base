@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/hex-go/hex-go-interview/internal/handler"
+	"github.com/hex-go/knowledge-base/internal/handler"
 )
 
 func main() {

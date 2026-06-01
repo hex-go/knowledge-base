@@ -8,7 +8,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/hex-go/hex-go-interview/web"
+	"github.com/hex-go/knowledge-base/web"
 )
 
 // markdownToHTML 将 markdown 文本转为简单 HTML

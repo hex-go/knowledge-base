@@ -1,12 +1,12 @@
 ---
 title: "概念问答标题"
-category: concurrency
+category: go/concurrency
 tags: [goroutine, 示例]
 difficulty: medium
 status: learning
-last_review: 2026-05-27
+last_review: 2026-06-01
 review_interval_days: 7
-related: []
+domain: go
 ---
 # 概念问答标题
 
@@ -23,3 +23,7 @@ related: []
 - 要点 1
 - 要点 2
 - 要点 3
+
+## 考察
+
+[[knowledge/domain/path/to/topic]]

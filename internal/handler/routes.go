@@ -12,9 +12,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/hex-go/hex-go-interview/internal/markdown"
-	"github.com/hex-go/hex-go-interview/internal/types"
-	"github.com/hex-go/hex-go-interview/web"
+	"github.com/hex-go/knowledge-base/internal/markdown"
+	"github.com/hex-go/knowledge-base/internal/types"
+	"github.com/hex-go/knowledge-base/web"
 )
 
 // Server 管理所有 HTTP 路由

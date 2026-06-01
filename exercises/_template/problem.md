@@ -1,9 +1,10 @@
 ---
 title: "编码题标题"
-category: concurrency
+category: go/concurrency
 tags: [goroutine, channel]
 difficulty: medium
 status: learning
+domain: go
 ---
 # 编码题标题
 
@@ -22,3 +23,7 @@ status: learning
 
 - 使用标准库，不使用第三方依赖
 - 注意并发安全
+
+## 考察
+
+[[knowledge/domain/path/to/topic]]

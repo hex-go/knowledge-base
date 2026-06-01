@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/hex-go/hex-go-interview/internal/types"
+	"github.com/hex-go/knowledge-base/internal/types"
 )
 
 // ParseFile 读取并解析一个 .md 文件
