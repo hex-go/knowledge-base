@@ -1,12 +1,16 @@
 ---
 title: "知识点标题"
-category: internals/slice-array
+category: go/internals
 tags: [example, 示例]
 difficulty: medium
 status: learning
-last_review: 2026-05-27
+last_review: 2026-06-01
 review_interval_days: 7
-related: []
+mastery:
+  wrong_count: 0
+  last_wrong_date: ""
+  review_count: 0
+domain: go
 ---
 # 知识点标题
 
@@ -17,3 +21,5 @@ related: []
 ## 我的理解
 
 这里用自己的语言重述。可以与标准知识表述不同，重要的是自己真正消化了。
+
+此处 [[wiki-links]] 只链域内知识，不链练习/错题/概念。
