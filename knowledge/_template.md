@@ -1,11 +1,12 @@
 ---
 title: "知识点标题"
-category: go/internals
+category: go/basics/topic
 tags: [example, 示例]
 difficulty: medium
 status: learning
 last_review: 2026-06-01
 review_interval_days: 7
+level: beginner
 mastery:
   wrong_count: 0
   last_wrong_date: ""

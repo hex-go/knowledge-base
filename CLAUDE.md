@@ -40,9 +40,7 @@ YAML frontmatter：`title`、`category`、`tags`、`difficulty`、`status`（lea
 
 ### 编码题 exercises/**/attempts.md
 
-每次尝试以 `## 尝试 N · 日期 · ✓/✗` 为分隔符。包含：修改意图、diff 代码块、错误原因。
-
-`difficulty` 写错时，diff 以 `+` 表示添加行、`-` 表示删除行，并保留足够上下文行。
+每次尝试以 `## 尝试 N · 日期 · ✓/✗` 为分隔符。内容为 AI 批改摘要（✅ 正确 / ❌ 错误 / + 改进）+ 用户完整代码。格式详见 `docs/MANUAL.md` §3.2。
 
 ### 概念问答 concepts/*.md
 

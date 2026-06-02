@@ -64,7 +64,7 @@ knowledge-base/
 │
 ├── wrong-book/                # 错题本（统一，frontmatter 标记 domain）
 │
-├── cross-domain/              # 跨域 bridge 文件（手动维护）
+├── cross-domain/              # 跨域 bridge 文件（/cross-link 触发，AI 生成）
 │
 ├── cmd/server/                # Web 浏览服务
 ├── internal/                  # 服务端逻辑

@@ -20,7 +20,7 @@ description: Guides the knowledge graph learning stage by generating card skelet
 
 1. 定位用户要学习的知识点路径。
 2. 读取对应 `roadmap.md`，确认 `level`、`requires` 和父级主题。
-3. 创建知识卡片，写入 frontmatter、`## 标准知识`、`## 我的理解` 空区块。
+3. 创建知识卡片，写入 frontmatter、`## 标准知识`、`## 我的理解` 空区块。生成后在 WSL 中执行 `code <path>` 打开文件。
 4. 允许用户边写边问，但不提前补链。
 5. 用户触发 "审一下" 后，逐段审核准确性、遗漏和表达清晰度。
 6. 审核通过后，按 `docs/MANUAL.md` 的 Level 2 规则做语义补链。
