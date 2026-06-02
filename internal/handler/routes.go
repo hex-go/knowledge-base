@@ -4,12 +4,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/fs"
+	"log"
 	"net/http"
 	"os"
 	"path/filepath"
 	"regexp"
-	"sort"
 	"strings"
+	"sort"
 	"time"
 
 	"github.com/hex-go/knowledge-base/internal/markdown"
@@ -467,7 +468,7 @@ func (s *Server) scanExercises() []*types.MarkdownFile {
 		if strings.Contains(d.Name(), "attempts") || strings.Contains(d.Name(), "solution") {
 			return nil
 		}
-		if strings.HasPrefix(d.Name(), "_template") {
+		if strings.Contains(path, "_template") {
 			return nil
 		}
 
@@ -476,6 +477,7 @@ func (s *Server) scanExercises() []*types.MarkdownFile {
 		if err != nil {
 			return nil
 		}
+		mf.RelPath = strings.TrimPrefix(filepath.ToSlash(rel), "exercises/")
 		files = append(files, mf)
 		return nil
 	})
@@ -493,6 +495,7 @@ func (s *Server) buildKnowledgeTree() []types.CategoryNode {
 
 		rel, _ := filepath.Rel(s.baseDir+"/knowledge", path)
 		rel = filepath.ToSlash(rel)
+		log.Printf("[DEBUG] WalkDir knowledge: rel=%s name=%s isDir=%v", rel, d.Name(), d.IsDir())
 
 		if strings.HasPrefix(filepath.Base(rel), "_") || strings.HasPrefix(filepath.Base(rel), ".") {
 			if d.IsDir() {
@@ -507,12 +510,13 @@ func (s *Server) buildKnowledgeTree() []types.CategoryNode {
 		if !strings.HasSuffix(d.Name(), ".md") {
 			return nil
 		}
-		if strings.Contains(d.Name(), "-attempts") {
+		if strings.Contains(d.Name(), "roadmap") || strings.Contains(d.Name(), "-attempts") {
 			return nil
 		}
 
 		mf, err := markdown.ParseFile(s.baseDir+"/knowledge", rel)
 		if err != nil {
+			log.Printf("[DEBUG] ParseFile failed for %s: %v", rel, err)
 			return nil
 		}
 

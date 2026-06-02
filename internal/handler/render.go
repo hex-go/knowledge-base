@@ -21,6 +21,7 @@ func markdownToHTML(md string) template.HTML {
 	md = replaceBold(md)
 	// 段落（连续的文本行）
 	md = replaceParagraphs(md)
+	md = replaceWikiLinks(md)
 
 	return template.HTML(md)
 }
@@ -45,6 +46,19 @@ func replaceInlineCode(md string) string {
 func replaceBold(md string) string {
 	re := regexp.MustCompile(`\*\*(.+?)\*\*`)
 	return re.ReplaceAllString(md, "<strong>$1</strong>")
+}
+
+func replaceWikiLinks(md string) string {
+	re := regexp.MustCompile(`\[\[([^\]|]+)(?:\|([^\]]+))?\]\]`)
+	return re.ReplaceAllStringFunc(md, func(match string) string {
+		sub := re.FindStringSubmatch(match)
+		path := sub[1]
+		text := sub[2]
+		if text == "" {
+			text = path
+		}
+		return fmt.Sprintf(`<a href="/%s.md">%s</a>`, path, text)
+	})
 }
 
 func replaceParagraphs(md string) string {
