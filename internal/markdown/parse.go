@@ -71,6 +71,10 @@ func parseFrontmatter(yml string) types.Meta {
 			m.Difficulty = val
 		case "status":
 			m.Status = val
+		case "domain":
+			m.Domain = val
+		case "level":
+			m.Level = val
 		case "wrong_count":
 			m.WrongCount, _ = strconv.Atoi(val)
 		case "last_review":

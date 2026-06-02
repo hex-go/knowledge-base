@@ -24,7 +24,6 @@
 - Go
 - K8s (Kubernetes)
 - Linux / OS
-- Bash
 - Python
 - AI / ML
 - Databases (MySQL, Redis, PostgreSQL, Elasticsearch)
@@ -57,6 +56,8 @@ knowledge-base/
 ├── exercises/                 # 编码题（按领域分子目录）
 │   ├── go/
 │   └── ...
+│
+├── challenges/                # 综合闯关考试（按领域/日期分子目录）
 │
 ├── concepts/                  # 概念问答（按领域分子目录）
 │   ├── go/
@@ -353,7 +354,8 @@ Slice 底层依赖 [[go/basics/array]] 的连续内存布局。
 2. 回顾高频错题        →  内化：错题反哺，发现薄弱知识点
 3. 刷一道题/学一个知识点  →  内化/学习：按当天状态选择
 4. 写「我的理解」       →  学习：填充后将触发审核→补链
-5. "审一下" / "更新知识图谱"  →  学习：审核通过后自动补链
+5. "审一下"           →  学习：单卡审核，通过后自动补链
+6. "更新知识图谱" / /sync →  学习：全量 Level 1+2 链接维护
 ```
 
 ### 5.2 知识点生命周期（主线）

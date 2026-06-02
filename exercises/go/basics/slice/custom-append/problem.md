@@ -1,9 +1,10 @@
 ---
 title: "自定义切片追加（扩容模拟）"
-category: internals/slice-array
+category: go/exercises/slice
 tags: [slice, append, 扩容]
 difficulty: medium
 status: learning
+domain: go
 ---
 # 自定义切片追加（扩容模拟）
 
@@ -44,3 +45,7 @@ AppendInt(&big, 1)  // oldCap=256 >= 256，扩容 25% → 320
 - 使用标准库，不引入第三方依赖
 - 不要调用内置 `append`，自己实现扩容逻辑
 - 处理好边界：`elems` 为空、`oldCap == 0`、一次追加多个元素
+
+## 考察
+
+[[knowledge/go/basics/slice/slice-expansion]]

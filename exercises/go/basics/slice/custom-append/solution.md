@@ -1,8 +1,9 @@
 ---
 title: "自定义切片追加 — 参考答案"
-category: internals/slice-array
+category: go/exercises/slice
 tags: [slice, append, 扩容]
 difficulty: medium
+domain: go
 ---
 # 自定义切片追加 — 参考答案
 

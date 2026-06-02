@@ -7,6 +7,8 @@ type Meta struct {
 	Tags            []string `json:"tags"`
 	Difficulty      string   `json:"difficulty"`
 	Status          string   `json:"status"`
+	Domain          string   `json:"domain,omitempty"`
+	Level           string   `json:"level,omitempty"`
 	WrongCount      int      `json:"wrong_count"`
 	LastReview      string   `json:"last_review"`
 	ReviewInterval  int      `json:"review_interval_days"`
