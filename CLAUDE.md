@@ -32,6 +32,8 @@ YAML frontmatter 必须包含：`title`、`category`、`tags`、`difficulty`、`
 
 正文必须包含 `## 我的理解` 区块。
 
+文件名即 Obsidian 图谱节点标签，要求精简且自解释。用短横线连接语义词根，避免领域前缀。例：`slice-expansion` ✓ / `go-slice` ✗。
+
 ### 编码题 exercises/**/problem.md
 
 YAML frontmatter：`title`、`category`、`tags`、`difficulty`、`status`（learning/attempted/mastered）、`domain`
