@@ -7,6 +7,7 @@ status: learning
 last_review: 2026-06-01
 review_interval_days: 7
 level: beginner
+aliases: ["Slice 基本使用"]
 domain: go
 mastery:
   wrong_count: 0

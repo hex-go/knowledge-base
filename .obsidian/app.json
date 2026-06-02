@@ -1,0 +1,21 @@
+{
+  "userIgnoreFilters": [
+    "**/_template*",
+    "**/*.gitkeep",
+    "**/*attempts*",
+    "**/solution.md",
+    "**/skeleton/**",
+    "**/roadmap.md",
+    "**/*.html",
+    "**/main.go",
+    "cmd/**",
+    "docs/**",
+    "internal/**",
+    "web/**",
+    ".claude/**",
+    ".vscode/**",
+    "go.mod",
+    "CLAUDE.md",
+    "README.md"
+  ]
+}

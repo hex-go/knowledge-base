@@ -1,0 +1,5 @@
+# Obsidian Graph View 过滤器
+# 用法：Ctrl+G 打开图谱 → 搜索框粘贴以下整行
+# 修改后 git commit && git push，另一设备 git pull 即可同步
+
+-path:_template -path:.gitkeep -path:solution -path:skeleton -path:roadmap -path:main.go -path:attempts -path:problem -path:.html -path:.css -path:.json -path:.go -path:docs/

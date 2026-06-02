@@ -7,6 +7,7 @@ status: learning
 last_review: 2026-05-27
 review_interval_days: 7
 level: intermediate
+aliases: ["切片扩容机制"]
 domain: go
 mastery:
   wrong_count: 0
