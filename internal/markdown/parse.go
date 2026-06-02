@@ -89,6 +89,8 @@ func parseFrontmatter(yml string) types.Meta {
 			m.ExerciseRef = val
 		case "last_wrong_date":
 			m.LastWrongDate = val
+		case "review_count":
+			m.ReviewCount, _ = strconv.Atoi(val)
 		}
 	}
 	return m

@@ -11,6 +11,13 @@
             <span>状态: {{.File.Meta.Status}}</span>
             <span>上次复习: {{.File.Meta.LastReview}}</span>
         </div>
+        <div class="mastery">
+            <span class="mastery-label">掌握度 · </span>
+            <span>练习: {{.File.Meta.ReviewCount}} 次</span>
+            <span>错误: {{.File.Meta.WrongCount}} 次</span>
+            {{if .File.Meta.Level}}<span>等级: {{.File.Meta.Level}}</span>{{end}}
+            <span>间隔: {{.File.Meta.ReviewInterval}} 天</span>
+        </div>
         {{if .File.Meta.Tags}}
         <div class="tags">
             {{range .File.Meta.Tags}}

@@ -16,6 +16,7 @@ type Meta struct {
 	Type            string   `json:"type"`            // 仅错题本: coding | concept
 	ExerciseRef     string   `json:"exercise_ref"`    // 仅错题本: 原题路径
 	LastWrongDate   string   `json:"last_wrong_date"` // 仅错题本
+	ReviewCount     int      `json:"review_count,omitempty"`
 }
 
 // MarkdownFile 表示一个完整的 .md 文件的解析结果
