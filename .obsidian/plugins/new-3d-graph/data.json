@@ -1,12 +1,20 @@
 {
-  "searchQuery": "-path:_template -path:.gitkeep -path:solution -path:skeleton -path:roadmap -path:main.go -path:attempts -path:problem -path:.html -path:.css -path:.json -path:.go -path:docs/",
+  "searchQuery": "",
   "showNeighboringNodes": true,
   "filters": [
-    {
-      "type": "path",
-      "value": "",
-      "inverted": false
-    }
+    { "type": "path", "value": "_template", "inverted": true },
+    { "type": "path", "value": ".gitkeep",  "inverted": true },
+    { "type": "path", "value": "solution",  "inverted": true },
+    { "type": "path", "value": "skeleton",  "inverted": true },
+    { "type": "path", "value": "roadmap",   "inverted": true },
+    { "type": "path", "value": "main.go",   "inverted": true },
+    { "type": "path", "value": "attempts",  "inverted": true },
+    { "type": "path", "value": "problem",   "inverted": true },
+    { "type": "path", "value": ".html",     "inverted": true },
+    { "type": "path", "value": ".css",      "inverted": true },
+    { "type": "path", "value": ".json",     "inverted": true },
+    { "type": "path", "value": ".go",       "inverted": true },
+    { "type": "path", "value": "docs/",     "inverted": true }
   ],
   "showAttachments": false,
   "hideOrphans": false,

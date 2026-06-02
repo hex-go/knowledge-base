@@ -1,5 +1,7 @@
-# Obsidian Graph View 过滤器
-# 用法：Ctrl+G 打开图谱 → 搜索框粘贴以下整行
+# Obsidian 知识图谱过滤器
+#
+# 内置 Graph View（Ctrl+G）：以下行粘贴到搜索框
+# -path:_template -path:.gitkeep -path:solution -path:skeleton -path:roadmap -path:main.go -path:attempts -path:problem -path:.html -path:.css -path:.json -path:.go -path:docs/
+#
+# 3D Graph 插件：Advanced Filter 处已持久化 13 条规则（见 .obsidian/plugins/new-3d-graph/data.json filters 数组）
 # 修改后 git commit && git push，另一设备 git pull 即可同步
-
--path:_template -path:.gitkeep -path:solution -path:skeleton -path:roadmap -path:main.go -path:attempts -path:problem -path:.html -path:.css -path:.json -path:.go -path:docs/
