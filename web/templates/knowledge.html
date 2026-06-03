@@ -14,6 +14,7 @@
     {{if .IsLeaf}}
         {{if .File}}
             <a href="/knowledge/{{.File.RelPath}}" class="item-link">
+                <span class="file-icon">📄</span>
                 <span class="difficulty difficulty-{{.File.Meta.Difficulty}}">{{.File.Meta.Difficulty}}</span>
                 {{.File.Meta.Title}}
                 {{if eq .File.Meta.Status "mastered"}}<span class="mastered">已掌握</span>{{end}}
@@ -21,7 +22,8 @@
         {{end}}
     {{else}}
         <div class="folder" data-expanded="true">
-            <span class="folder-toggle">▼</span>
+            <span class="folder-toggle">▾</span>
+            <span class="folder-icon">📁</span>
             <span class="folder-name">{{.Name}}</span>
         </div>
         <div class="folder-content">
