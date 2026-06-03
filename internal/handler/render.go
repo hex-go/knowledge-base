@@ -11,15 +11,29 @@ import (
 
 	"github.com/hex-go/knowledge-base/web"
 	"github.com/yuin/goldmark"
+	"github.com/yuin/goldmark/extension"
 )
 
 func markdownToHTML(md string) template.HTML {
 	var buf bytes.Buffer
-	if err := goldmark.Convert([]byte(md), &buf); err != nil {
+	mdEngine := goldmark.New(
+		goldmark.WithExtensions(
+			extension.Table,
+			extension.Strikethrough,
+			extension.TaskList,
+			extension.Linkify,
+		),
+	)
+	if err := mdEngine.Convert([]byte(md), &buf); err != nil {
 		return template.HTML(template.HTMLEscapeString(md))
 	}
-	html := replaceWikiLinks(buf.String())
+	html := replaceMermaid(replaceWikiLinks(buf.String()))
 	return template.HTML(html)
+}
+
+func replaceMermaid(html string) string {
+	re := regexp.MustCompile(`<pre><code class="language-mermaid">([\s\S]*?)</code></pre>`)
+	return re.ReplaceAllString(html, `<pre class="mermaid">$1</pre>`)
 }
 
 func replaceWikiLinks(md string) string {
