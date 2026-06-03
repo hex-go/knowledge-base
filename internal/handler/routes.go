@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/fs"
-	"log"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -495,9 +494,8 @@ func (s *Server) buildKnowledgeTree() []types.CategoryNode {
 
 		rel, _ := filepath.Rel(s.baseDir+"/knowledge", path)
 		rel = filepath.ToSlash(rel)
-		log.Printf("[DEBUG] WalkDir knowledge: rel=%s name=%s isDir=%v", rel, d.Name(), d.IsDir())
 
-		if strings.HasPrefix(filepath.Base(rel), "_") || strings.HasPrefix(filepath.Base(rel), ".") {
+		if rel != "." && (strings.HasPrefix(filepath.Base(rel), "_") || strings.HasPrefix(filepath.Base(rel), ".")) {
 			if d.IsDir() {
 				return filepath.SkipDir
 			}
@@ -516,7 +514,6 @@ func (s *Server) buildKnowledgeTree() []types.CategoryNode {
 
 		mf, err := markdown.ParseFile(s.baseDir+"/knowledge", rel)
 		if err != nil {
-			log.Printf("[DEBUG] ParseFile failed for %s: %v", rel, err)
 			return nil
 		}
 
